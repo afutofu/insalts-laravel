@@ -12,10 +12,19 @@ const NavbarComp = styled.nav`
     box-sizing: border-box;
 `;
 
+const Icon = styled.img.attrs(() => ({
+    src: "https://image.freepik.com/free-icon/salt_318-127920.jpg"
+}))`
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+`;
+
 const Title = styled.h3`
     font-size: 20px;
     font-weight: 500;
     margin: 0;
+    color: black;
 `;
 
 const NavItems = styled.ul`
@@ -27,14 +36,20 @@ const NavItems = styled.ul`
 
 const NavItem = styled.li`
     font-size: 16px;
-    margin-left: 10px;
+    margin-left: 20px;
     color: #666;
+    list-style: none;
+    display: flex;
 `;
 
 const Navbar = () => {
     return (
         <NavbarComp>
-            <Title>Insalts</Title>
+            <Title>
+                <Icon />
+                Insalts
+            </Title>
+
             <NavItems>
                 <NavItem>Login</NavItem>
                 <NavItem>Register</NavItem>

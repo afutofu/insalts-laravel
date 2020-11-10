@@ -16,6 +16,12 @@
             }
         </style>
 
+         <!--Fontawesome-->
+        <script
+        src="https://kit.fontawesome.com/d8a187ff41.js"
+        crossorigin="anonymous"
+        ></script>
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="antialiased">
