@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             body {
-                font-family: 'Nunito';
+                font-family: 'Montserrat', 'Nunito';
             }
         </style>
 
@@ -25,5 +25,6 @@
 
         <!-- React JS -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        
     </body>
 </html>
