@@ -100,7 +100,7 @@ const Title = styled.h1`
 `;
 
 const Header = styled.h3`
-    font-size: 12x;
+    font-size: 12px;
     text-transform: uppercase;
     margin-bottom: 10px;
     font-weight: 500;
@@ -193,7 +193,7 @@ const LoginModal = props => {
     if (modalOpen) firstRender = false;
 
     const onLogin = () => {
-        console.log("login");
+        // Attempt login
     };
 
     const onModalClose = () => {

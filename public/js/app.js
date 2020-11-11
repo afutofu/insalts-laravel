@@ -73548,7 +73548,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n    font-size: 12x;\n    text-transform: uppercase;\n    margin-bottom: 10px;\n    font-weight: 500;\n"]);
+  var data = _taggedTemplateLiteral(["\n    font-size: 12px;\n    text-transform: uppercase;\n    margin-bottom: 10px;\n    font-weight: 500;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -73668,8 +73668,7 @@ var LoginModal = function LoginModal(props) {
       toggleModal = props.toggleModal;
   if (modalOpen) firstRender = false;
 
-  var onLogin = function onLogin() {
-    console.log("login");
+  var onLogin = function onLogin() {// Attempt login
   };
 
   var onModalClose = function onModalClose() {
@@ -74064,10 +74063,11 @@ var RegisterModal = function RegisterModal(props) {
       toggleModal = props.toggleModal;
   if (modalOpen) firstRender = false;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log(hasErrors(registerDataError));
+    if (isValidated(registerDataError)) {// Attempt to register
+    }
   }, [registerDataError]);
 
-  var hasErrors = function hasErrors(registerData) {
+  var isValidated = function isValidated(registerData) {
     var error = false;
 
     for (var key in registerData) {

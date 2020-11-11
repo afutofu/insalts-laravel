@@ -220,10 +220,12 @@ const RegisterModal = props => {
     if (modalOpen) firstRender = false;
 
     useEffect(() => {
-        console.log(hasErrors(registerDataError));
+        if (isValidated(registerDataError)) {
+            // Attempt to register
+        }
     }, [registerDataError]);
 
-    const hasErrors = registerData => {
+    const isValidated = registerData => {
         let error = false;
         for (let key in registerData) {
             if (registerData[key].length > 0) {
