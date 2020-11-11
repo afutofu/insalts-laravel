@@ -48,7 +48,7 @@ const SaltList = () => {
                 <ListItem>Cats</ListItem>
                 <ListItem>Faces</ListItem>
             </List>
-            <Button>view all</Button>
+            <Button src="/salts">view all</Button>
         </SaltListComp>
     );
 };

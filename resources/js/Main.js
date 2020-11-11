@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Salts from "./pages/Salts";
 
 const MainComp = styled.div`
     font-family: "Montserrat", "san-serif";
@@ -13,10 +15,15 @@ const MainComp = styled.div`
 
 const Main = () => {
     return (
-        <MainComp>
-            <Navbar />
-            <Home />
-        </MainComp>
+        <Router>
+            <MainComp>
+                <Navbar />
+                <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/salts" exact component={Salts} />
+                </Switch>
+            </MainComp>
+        </Router>
     );
 };
 

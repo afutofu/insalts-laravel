@@ -38,8 +38,42 @@ const Desc = styled.p`
     font-weight: 500;
 `;
 
-const Jumbotron = () => {
-    return (
+const JumbotronSaltsComp = styled.div`
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://media.istockphoto.com/photos/background-of-white-sea-salt-picture-id184342915?k=6&m=184342915&s=612x612&w=0&h=iV9PtQwXQ2lnnIP_Bvzk3UwUg37tpDS0Zzgl-3wyRW4=");
+    margin-bottom: 50px;
+`;
+
+const ContainerSalts = styled.div`
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+`;
+
+const TitleSalts = styled.h1`
+    margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+`;
+
+const DescSalts = styled.p`
+    margin: 0;
+    font-size: 16px;
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    border-radius: 15px;
+    font-weight: 500;
+`;
+
+const Jumbotron = props => {
+    const home = (
         <JumbotronComp>
             <Container>
                 <Title>Insult of the Week</Title>
@@ -47,6 +81,20 @@ const Jumbotron = () => {
             </Container>
         </JumbotronComp>
     );
+
+    const salts = (
+        <JumbotronSaltsComp>
+            <ContainerSalts>
+                <TitleSalts>Check Out All The Salts</TitleSalts>
+                <DescSalts>
+                    Browse the saltiest salts. Find which one you like and start
+                    insalting
+                </DescSalts>
+            </ContainerSalts>
+        </JumbotronSaltsComp>
+    );
+
+    return props.salts ? salts : home;
 };
 
 export default Jumbotron;

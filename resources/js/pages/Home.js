@@ -41,6 +41,16 @@ const Home = () => {
                     <InfoCard
                         title="home"
                         desc="Your personal InSalts homepage, come here to check on insalts from your favorite salts"
+                        buttons={[
+                            {
+                                text: "create insalt"
+                            },
+                            {
+                                text: "create salt",
+                                secondary: true,
+                                noMarginTop: true
+                            }
+                        ]}
                     />
                 </Aside>
             </Container>

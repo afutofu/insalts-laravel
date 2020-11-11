@@ -23,6 +23,7 @@ const Title = styled.h2`
 const Desc = styled.p`
     font-size: 18px;
     padding: 10px 20px;
+    padding-bottom: 0;
     margin: 0;
 `;
 
@@ -31,10 +32,17 @@ const InfoCard = props => {
         <InfoCardComp>
             <Title>{props.title}</Title>
             <Desc>{props.desc}</Desc>
-            <Button>create insalt</Button>
-            <Button secondary={true} noMarginTop={true}>
-                create salt
-            </Button>
+            {props.buttons.map((button, i) => {
+                return (
+                    <Button
+                        key={i}
+                        secondary={button.secondary}
+                        noMarginTop={button.secondary}
+                    >
+                        {button.text}
+                    </Button>
+                );
+            })}
         </InfoCardComp>
     );
 };
