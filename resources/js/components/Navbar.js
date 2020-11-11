@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+
+import { loginModalToggle } from "../store/actions/modal";
 
 const NavbarComp = styled.nav`
     width: 100%;
@@ -42,13 +45,17 @@ const NavItems = styled.ul`
 
 const NavItem = styled.li`
     font-size: 16px;
+    padding: 5px;
     margin-left: 30px;
     color: #666;
     list-style: none;
     display: flex;
+    cursor: pointer;
 `;
 
-const Navbar = () => {
+const Navbar = props => {
+    const { loginModalToggle } = props;
+
     return (
         <NavbarComp>
             <Title>
@@ -59,11 +66,17 @@ const Navbar = () => {
             </Title>
 
             <NavItems>
-                <NavItem>Login</NavItem>
+                <NavItem onClick={() => loginModalToggle()}>Login</NavItem>
                 <NavItem>Register</NavItem>
             </NavItems>
         </NavbarComp>
     );
 };
 
-export default Navbar;
+const mapDispatchToProps = dispatch => {
+    return {
+        loginModalToggle: () => dispatch(loginModalToggle())
+    };
+};
+
+export default connect(null, mapDispatchToProps)(Navbar);

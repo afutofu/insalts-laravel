@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import Navbar from "./components/Navbar";
+import LoginModal from "./components/LoginModal";
 import Home from "./pages/Home";
 import Salts from "./pages/Salts";
 
@@ -22,6 +23,7 @@ const Main = () => {
             <Router>
                 <MainComp>
                     <Navbar />
+                    <LoginModal />
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/salts" exact component={Salts} />

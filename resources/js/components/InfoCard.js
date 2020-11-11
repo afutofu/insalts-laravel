@@ -15,7 +15,7 @@ const Title = styled.h2`
     width: 100%;
     font-size: 16px;
     text-transform: uppercase;
-    padding: 20px;
+    padding: 16px 20px;
     border-bottom: 1px solid #ccc;
     font-weight: 500;
     margin: 0;
