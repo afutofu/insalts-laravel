@@ -8,6 +8,7 @@ import store from "./store";
 
 import Navbar from "./components/Navbar";
 import LoginModal from "./components/LoginModal";
+import RegisterModal from "./components/RegisterModal";
 import Home from "./pages/Home";
 import Salts from "./pages/Salts";
 
@@ -24,6 +25,7 @@ const Main = () => {
                 <MainComp>
                     <Navbar />
                     <LoginModal />
+                    <RegisterModal />
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/salts" exact component={Salts} />

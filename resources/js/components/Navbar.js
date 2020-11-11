@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { loginModalToggle } from "../store/actions/modal";
+import { loginModalToggle, registerModalToggle } from "../store/actions/modal";
 
 const NavbarComp = styled.nav`
     width: 100%;
@@ -51,10 +51,15 @@ const NavItem = styled.li`
     list-style: none;
     display: flex;
     cursor: pointer;
+
+    transition: color 0.2s;
+    :hover {
+        color: #b64e1f;
+    }
 `;
 
 const Navbar = props => {
-    const { loginModalToggle } = props;
+    const { loginModalToggle, registerModalToggle } = props;
 
     return (
         <NavbarComp>
@@ -67,7 +72,9 @@ const Navbar = props => {
 
             <NavItems>
                 <NavItem onClick={() => loginModalToggle()}>Login</NavItem>
-                <NavItem>Register</NavItem>
+                <NavItem onClick={() => registerModalToggle()}>
+                    Register
+                </NavItem>
             </NavItems>
         </NavbarComp>
     );
@@ -75,7 +82,8 @@ const Navbar = props => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loginModalToggle: () => dispatch(loginModalToggle())
+        loginModalToggle: () => dispatch(loginModalToggle()),
+        registerModalToggle: () => dispatch(registerModalToggle())
     };
 };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { connect } from "react-redux";
 
-import { loginModalToggle } from "../store/actions/modal";
+import { registerModalToggle } from "../store/actions/modal";
 
 const modalFadeIn = keyframes`
   0% {
@@ -37,7 +37,7 @@ const modalFadeOut = keyframes`
 const ButtonContainerHeight = "80px";
 const horizontalPadding = "25px";
 
-const LoginModalComp = styled.div`
+const RegisterModalComp = styled.div`
     position: fixed;
     color: #222;
     top: 0;
@@ -67,7 +67,7 @@ const Backdrop = styled.div`
     z-index: 150;
 `;
 
-const LoginBox = styled.div`
+const RegisterBox = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
@@ -147,7 +147,7 @@ const ButtonContainer = styled.div`
     }
 `;
 
-const LoginButton = styled.button`
+const RegisterButton = styled.button`
     border: none;
     outline: none;
     background-color: #b64e1f;
@@ -185,69 +185,121 @@ const CancelButton = styled.button`
 `;
 
 let firstRender = true;
-const LoginModal = props => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+const RegisterModal = props => {
+    const initialRegisterData = {
+        username: "",
+        email: "",
+        password: "",
+        rePassword: ""
+    };
+    const [registerData, setRegisterData] = useState(initialRegisterData);
     const { modalOpen, toggleModal } = props;
 
     if (modalOpen) firstRender = false;
 
-    const onLogin = () => {
-        console.log("login");
+    const onRegister = () => {
+        console.log(registerData);
     };
 
     const onModalClose = () => {
-        setEmail("");
-        setPassword("");
+        setRegisterData(initialRegisterData);
         toggleModal();
     };
 
     return (
-        <LoginModalComp modalOpen={modalOpen} firstRender={firstRender}>
+        <RegisterModalComp modalOpen={modalOpen} firstRender={firstRender}>
             <Backdrop onClick={() => onModalClose()} />
-            <LoginBox>
+            <RegisterBox>
                 <Container>
                     <Title>login</Title>
-                    <Header>enter email</Header>
+                    <Header>username</Header>
                     <Input
-                        onChange={e => setEmail(e.target.value)}
-                        value={email}
+                        onChange={e => {
+                            e.persist();
+                            setRegisterData(prevData => {
+                                return {
+                                    ...prevData,
+                                    username: e.target.value
+                                };
+                            });
+                        }}
+                        value={registerData.username}
                         onKeyPress={e => {
-                            if (e.key === "Enter") onLogin();
+                            if (e.key === "Enter") onRegister();
                         }}
                     />
-                    <Header>enter password</Header>
+                    <Header>email</Header>
                     <Input
-                        onChange={e => setPassword(e.target.value)}
-                        value={password}
+                        onChange={e => {
+                            e.persist();
+                            setRegisterData(prevData => {
+                                return {
+                                    ...prevData,
+                                    email: e.target.value
+                                };
+                            });
+                        }}
+                        value={registerData.email}
                         onKeyPress={e => {
-                            if (e.key === "Enter") onLogin();
+                            if (e.key === "Enter") onRegister();
+                        }}
+                    />
+                    <Header>password</Header>
+                    <Input
+                        onChange={e => {
+                            e.persist();
+                            setRegisterData(prevData => {
+                                return {
+                                    ...prevData,
+                                    password: e.target.value
+                                };
+                            });
+                        }}
+                        value={registerData.password}
+                        onKeyPress={e => {
+                            if (e.key === "Enter") onRegister();
+                        }}
+                    />
+                    <Header>retype password</Header>
+                    <Input
+                        onChange={e => {
+                            e.persist();
+                            setRegisterData(prevData => {
+                                return {
+                                    ...prevData,
+                                    rePassword: e.target.value
+                                };
+                            });
+                        }}
+                        value={registerData.rePassword}
+                        onKeyPress={e => {
+                            if (e.key === "Enter") onRegister();
                         }}
                     />
                 </Container>
                 <ButtonContainer>
-                    <LoginButton onClick={() => onLogin()}>
+                    <RegisterButton onClick={() => onRegister()}>
                         Create Project
-                    </LoginButton>
+                    </RegisterButton>
                     <CancelButton onClick={() => onModalClose()}>
                         Cancel
                     </CancelButton>
                 </ButtonContainer>
-            </LoginBox>
-        </LoginModalComp>
+            </RegisterBox>
+        </RegisterModalComp>
     );
 };
 
 const mapStateToProps = state => {
     return {
-        modalOpen: state.modal.login
+        modalOpen: state.modal.register
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        toggleModal: () => dispatch(loginModalToggle())
+        toggleModal: () => dispatch(registerModalToggle())
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginModal);
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterModal);
