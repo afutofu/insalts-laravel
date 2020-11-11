@@ -73538,7 +73538,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 100%;\n    height: 45px;\n    padding: 10px 20px;\n    border-radius: 10px;\n    color: #222;\n    background-color: #fff;\n    outline: none;\n    border: none;\n    box-sizing: border-box;\n    font-size: 14px;\n    font-family: \"Montserrat\", \"san-serif\";\n    margin: 0;\n    margin-bottom: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 100%;\n    height: 45px;\n    padding: 10px 20px;\n    border-radius: 10px;\n    color: #222;\n    background-color: #fff;\n    outline: none;\n    border: none;\n    box-sizing: border-box;\n    font-size: 12px;\n    font-family: \"Montserrat\", \"san-serif\";\n    margin: 0;\n    margin-bottom: 20px;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -73548,7 +73548,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n    font-size: 14px;\n    text-transform: uppercase;\n    margin-bottom: 10px;\n    font-weight: 500;\n"]);
+  var data = _taggedTemplateLiteral(["\n    font-size: 12x;\n    text-transform: uppercase;\n    margin-bottom: 10px;\n    font-weight: 500;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -73875,8 +73875,18 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _templateObject12() {
+function _templateObject13() {
   var data = _taggedTemplateLiteral(["\n    border: none;\n    outline: none;\n    background: none;\n    color: #222;\n\n    :hover {\n        text-decoration: underline;\n    }\n    :focus {\n        outline: none;\n    }\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n    border: none;\n    outline: none;\n    background-color: #b64e1f;\n    color: #ddd;\n    margin-right: 20px;\n\n    transition: 0.2s;\n    :hover {\n        outline: none;\n        background-color: #e98455;\n    }\n\n    :focus {\n        outline: none;\n    }\n\n    :active {\n        outline: none;\n        background-color: #b64e1f;\n    }\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -73886,7 +73896,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n    border: none;\n    outline: none;\n    background-color: #b64e1f;\n    color: #ddd;\n    margin-right: 20px;\n\n    transition: 0.2s;\n    :hover {\n        outline: none;\n        background-color: #e98455;\n    }\n\n    :focus {\n        outline: none;\n    }\n\n    :active {\n        outline: none;\n        background-color: #b64e1f;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n    height: ", ";\n    background-color: #ddd;\n    border-radius: 0 0 10px 10px;\n    padding: ", ";\n    box-sizing: border-box;\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n\n    button {\n        padding: 10px 20px;\n        border-radius: 5px;\n        cursor: pointer;\n        font-size: 14px;\n        font-family: \"Montserrat\", \"san-serif\";\n        box-sizing: border-box;\n        font-weight: 500;\n    }\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -73896,7 +73906,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n    height: ", ";\n    background-color: #ddd;\n    border-radius: 0 0 10px 10px;\n    padding: ", ";\n    box-sizing: border-box;\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n\n    button {\n        padding: 10px 20px;\n        border-radius: 5px;\n        cursor: pointer;\n        font-size: 14px;\n        font-family: \"Montserrat\", \"san-serif\";\n        box-sizing: border-box;\n        font-weight: 500;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    margin: 0;\n    font-size: 10px;\n    color: red;\n    margin-left: 10px;\n    text-transform: capitalize;\n    font-weight: 400;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -73906,7 +73916,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 100%;\n    height: 45px;\n    padding: 10px 20px;\n    border-radius: 10px;\n    color: #222;\n    background-color: #fff;\n    outline: none;\n    border: none;\n    box-sizing: border-box;\n    font-size: 14px;\n    font-family: \"Montserrat\", \"san-serif\";\n    margin: 0;\n    margin-bottom: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 100%;\n    height: 45px;\n    padding: 10px 20px;\n    border-radius: 10px;\n    color: #222;\n    background-color: #fff;\n    outline: none;\n    border: none;\n    box-sizing: border-box;\n    font-size: 12px;\n    font-family: \"Montserrat\", \"san-serif\";\n    margin: 0;\n    margin-bottom: 20px;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -73916,7 +73926,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n    font-size: 14px;\n    text-transform: uppercase;\n    margin-bottom: 10px;\n    font-weight: 500;\n"]);
+  var data = _taggedTemplateLiteral(["\n    font-size: 12px;\n    text-transform: uppercase;\n    margin-bottom: 10px;\n    font-weight: 500;\n\n    display: flex;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -74014,15 +74024,26 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_t
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject7());
 var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3(_templateObject8());
 var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.attrs(function (props) {
-  return {};
+  var _props$type;
+
+  return {
+    type: (_props$type = props.type) !== null && _props$type !== void 0 ? _props$type : "text"
+  };
 })(_templateObject9());
-var ButtonContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject10(), ButtonContainerHeight, horizontalPadding);
-var RegisterButton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject11());
-var CancelButton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject12());
+var Error = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p(_templateObject10());
+var ButtonContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject11(), ButtonContainerHeight, horizontalPadding);
+var RegisterButton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject12());
+var CancelButton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject13());
 var firstRender = true;
 
 var RegisterModal = function RegisterModal(props) {
   var initialRegisterData = {
+    username: "",
+    email: "",
+    password: "",
+    rePassword: ""
+  };
+  var initialRegisterDataError = {
     username: "",
     email: "",
     password: "",
@@ -74034,12 +74055,86 @@ var RegisterModal = function RegisterModal(props) {
       registerData = _useState2[0],
       setRegisterData = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialRegisterDataError),
+      _useState4 = _slicedToArray(_useState3, 2),
+      registerDataError = _useState4[0],
+      setRegisterDataError = _useState4[1];
+
   var modalOpen = props.modalOpen,
       toggleModal = props.toggleModal;
   if (modalOpen) firstRender = false;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log(hasErrors(registerDataError));
+  }, [registerDataError]);
+
+  var hasErrors = function hasErrors(registerData) {
+    var error = false;
+
+    for (var key in registerData) {
+      if (registerData[key].length > 0) {
+        error = true;
+      }
+    }
+
+    return error;
+  };
 
   var onRegister = function onRegister() {
-    console.log(registerData);
+    // Validate Register Data
+    // Reset error data
+    setRegisterDataError(initialRegisterDataError); // Check if username is over 4 characters long
+
+    if (registerData.username.length < 5) {
+      setRegisterDataError(function (prevData) {
+        return _objectSpread(_objectSpread({}, prevData), {}, {
+          username: "Username needs to be over 4 characters long"
+        });
+      });
+    } // Check if email is proper format
+    // Regex for email
+
+
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!re.test(String(registerData.email).toLowerCase())) {
+      setRegisterDataError(function (prevData) {
+        return _objectSpread(_objectSpread({}, prevData), {}, {
+          email: "Email needs to have proper format"
+        });
+      });
+    } // Check if retyped password matches password
+
+
+    if (registerData.password !== registerData.rePassword) {
+      setRegisterDataError(function (prevData) {
+        return _objectSpread(_objectSpread({}, prevData), {}, {
+          password: "Password does not match",
+          rePassword: "Password does not match"
+        });
+      });
+    } // Check if password is greater than or equals to 8 characters long
+
+
+    if (registerData.password.length < 8) {
+      setRegisterDataError(function (prevData) {
+        return _objectSpread(_objectSpread({}, prevData), {}, {
+          password: "Password needs to be over 8 characters long"
+        });
+      });
+    } // Check if any fields are empty
+
+
+    var _loop = function _loop(key) {
+      if (registerData[key].length <= 0) {
+        setRegisterDataError(function (prevData) {
+          return _objectSpread(_objectSpread({}, prevData), {}, _defineProperty({}, key, "Field cannot be empty"));
+        });
+      }
+    };
+
+    for (var key in registerData) {
+      _loop(key);
+    }
   };
 
   var onModalClose = function onModalClose() {
@@ -74054,7 +74149,7 @@ var RegisterModal = function RegisterModal(props) {
     onClick: function onClick() {
       return onModalClose();
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RegisterBox, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, "login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "username"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RegisterBox, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, "login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "username ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Error, null, registerDataError.username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
     onChange: function onChange(e) {
       e.persist();
       setRegisterData(function (prevData) {
@@ -74067,7 +74162,7 @@ var RegisterModal = function RegisterModal(props) {
     onKeyPress: function onKeyPress(e) {
       if (e.key === "Enter") onRegister();
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "email", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Error, null, registerDataError.email)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
     onChange: function onChange(e) {
       e.persist();
       setRegisterData(function (prevData) {
@@ -74080,7 +74175,8 @@ var RegisterModal = function RegisterModal(props) {
     onKeyPress: function onKeyPress(e) {
       if (e.key === "Enter") onRegister();
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "password", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Error, null, registerDataError.password)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    type: "password",
     onChange: function onChange(e) {
       e.persist();
       setRegisterData(function (prevData) {
@@ -74093,7 +74189,8 @@ var RegisterModal = function RegisterModal(props) {
     onKeyPress: function onKeyPress(e) {
       if (e.key === "Enter") onRegister();
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "retype password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "retype password", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Error, null, registerDataError.rePassword)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    type: "password",
     onChange: function onChange(e) {
       e.persist();
       setRegisterData(function (prevData) {

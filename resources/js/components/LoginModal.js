@@ -100,7 +100,7 @@ const Title = styled.h1`
 `;
 
 const Header = styled.h3`
-    font-size: 14px;
+    font-size: 12x;
     text-transform: uppercase;
     margin-bottom: 10px;
     font-weight: 500;
@@ -117,7 +117,7 @@ const Input = styled.input.attrs(props => ({}))`
     outline: none;
     border: none;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 12px;
     font-family: "Montserrat", "san-serif";
     margin: 0;
     margin-bottom: 20px;
