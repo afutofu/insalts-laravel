@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+import Button from "../components/Button";
+
 const SaltListComp = styled.div`
     width: 300px;
     background-color: white;
     border-radius: 5px;
+    margin-bottom: 40px;
 `;
 
 const Title = styled.h2`
@@ -45,6 +48,7 @@ const SaltList = () => {
                 <ListItem>Cats</ListItem>
                 <ListItem>Faces</ListItem>
             </List>
+            <Button>view all</Button>
         </SaltListComp>
     );
 };

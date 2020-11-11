@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Jumbotron from "../components/Jumbotron";
 import SaltList from "../components/SaltList";
+import InfoCard from "../components/InfoCard";
 
 const HomeComp = styled.section`
     position: relative;
@@ -37,6 +38,10 @@ const Home = () => {
                 <Content></Content>
                 <Aside>
                     <SaltList />
+                    <InfoCard
+                        title="home"
+                        desc="Your personal InSalts homepage, come here to check on insalts from your favorite salts"
+                    />
                 </Aside>
             </Container>
         </HomeComp>

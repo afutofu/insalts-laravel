@@ -67062,6 +67062,116 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/Button.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Button.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    width: calc(100% - 40px);\n    height: 45px;\n    padding: 8px 0;\n    text-align: center;\n    background-color: ", ";\n    color: ", ";\n    margin: 18px 20px;\n    margin-top: ", ";\n    text-transform: uppercase;\n    border: ", ";\n    outline: none;\n    box-sizing: border-box;\n    font-size: 16px;\n    font-weight: 600;\n    border-radius: 5px;\n\n    :focus {\n        outline: none;\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var ButtonComp = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject(), function (props) {
+  return props.secondary ? "white" : "rgb(182, 78, 31)";
+}, function (props) {
+  return props.secondary ? "rgb(182, 78, 31)" : "white";
+}, function (props) {
+  return props.noMarginTop && "0px";
+}, function (props) {
+  return props.secondary ? "1px solid rgb(182, 78, 31)" : "none";
+});
+
+var Button = function Button(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ButtonComp, {
+    secondary: props.secondary,
+    noMarginTop: props.noMarginTop
+  }, props.children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Button);
+
+/***/ }),
+
+/***/ "./resources/js/components/InfoCard.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/InfoCard.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Button */ "./resources/js/components/Button.js");
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 18px;\n    padding: 10px 20px;\n    margin: 0;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    font-size: 20px;\n    text-transform: uppercase;\n    padding: 20px;\n    border-bottom: 1px solid #ccc;\n    font-weight: 500;\n    margin: 0;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    width: 300px;\n    background-color: white;\n    border-radius: 5px;\n    margin-bottom: 40px;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var InfoCardComp = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2(_templateObject2());
+var Desc = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p(_templateObject3());
+
+var InfoCard = function InfoCard(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoCardComp, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, props.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Desc, null, props.desc), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], null, "create insalt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    secondary: true,
+    noMarginTop: true
+  }, "create salt"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (InfoCard);
+
+/***/ }),
+
 /***/ "./resources/js/components/Jumbotron.js":
 /*!**********************************************!*\
   !*** ./resources/js/components/Jumbotron.js ***!
@@ -67227,6 +67337,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Button */ "./resources/js/components/Button.js");
 function _templateObject4() {
   var data = _taggedTemplateLiteral(["\n    width: 100%;\n    font-size: 18px;\n    list-style: none;\n    border-bottom: 1px solid #ccc;\n    padding: 10px 20px;\n"]);
 
@@ -67258,7 +67369,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    width: 300px;\n    background-color: white;\n    border-radius: 5px;\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 300px;\n    background-color: white;\n    border-radius: 5px;\n    margin-bottom: 40px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -67271,13 +67382,14 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var SaltListComp = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2(_templateObject2());
 var List = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].ul(_templateObject3());
 var ListItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li(_templateObject4());
 
 var SaltList = function SaltList() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SaltListComp, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, "Saltiest Salts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(List, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ListItem, null, "Yo Mama"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ListItem, null, "Cats"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ListItem, null, "Faces")));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SaltListComp, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, "Saltiest Salts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(List, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ListItem, null, "Yo Mama"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ListItem, null, "Cats"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ListItem, null, "Faces")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], null, "view all"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SaltList);
@@ -67298,6 +67410,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _components_Jumbotron__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Jumbotron */ "./resources/js/components/Jumbotron.js");
 /* harmony import */ var _components_SaltList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/SaltList */ "./resources/js/components/SaltList.js");
+/* harmony import */ var _components_InfoCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/InfoCard */ "./resources/js/components/InfoCard.js");
 function _templateObject4() {
   var data = _taggedTemplateLiteral(["\n    width: 30%;\n    display: flex;\n    flex-direction: column;\n"]);
 
@@ -67344,13 +67457,17 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var HomeComp = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject());
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2());
 var Content = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject3());
 var Aside = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].aside(_templateObject4());
 
 var Home = function Home() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HomeComp, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Jumbotron__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Aside, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_SaltList__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HomeComp, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Jumbotron__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Aside, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_SaltList__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InfoCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    title: "home",
+    desc: "Your personal InSalts homepage, come here to check on insalts from your favorite salts"
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
