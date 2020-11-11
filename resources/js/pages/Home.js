@@ -19,12 +19,14 @@ const Container = styled.div`
 `;
 
 const Content = styled.section`
+    position: relative;
     width: 70%;
     display: flex;
     flex-direction: column;
 `;
 
 const Aside = styled.aside`
+    position: relative;
     width: 30%;
     display: flex;
     flex-direction: column;

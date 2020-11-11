@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const NavbarComp = styled.nav`
     width: 100%;
@@ -21,10 +22,15 @@ const Icon = styled.img.attrs(() => ({
 `;
 
 const Title = styled.h3`
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 16px;
     margin: 0;
     color: black;
+    font-weight: 400;
+
+    a {
+        color: unset;
+        text-decoration: none;
+    }
 `;
 
 const NavItems = styled.ul`
@@ -36,7 +42,7 @@ const NavItems = styled.ul`
 
 const NavItem = styled.li`
     font-size: 16px;
-    margin-left: 20px;
+    margin-left: 30px;
     color: #666;
     list-style: none;
     display: flex;
@@ -46,8 +52,10 @@ const Navbar = () => {
     return (
         <NavbarComp>
             <Title>
-                <Icon />
-                Insalts
+                <Link to="/">
+                    <Icon />
+                    Insalts
+                </Link>
             </Title>
 
             <NavItems>

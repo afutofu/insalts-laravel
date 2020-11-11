@@ -4,17 +4,17 @@ import styled from "styled-components";
 import Button from "../components/Button";
 
 const SaltListComp = styled.div`
-    width: 300px;
+    width: 250px;
     background-color: white;
     border-radius: 5px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 `;
 
 const Title = styled.h2`
     width: 100%;
     font-size: 20px;
     text-transform: uppercase;
-    padding: 20px;
+    padding: 16px;
     border-bottom: 1px solid #ccc;
     font-weight: 500;
     margin: 0;
@@ -33,7 +33,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
     width: 100%;
-    font-size: 18px;
+    font-size: 14px;
     list-style: none;
     border-bottom: 1px solid #ccc;
     padding: 10px 20px;

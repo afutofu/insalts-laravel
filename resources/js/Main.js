@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import store from "./store";
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -15,15 +18,17 @@ const MainComp = styled.div`
 
 const Main = () => {
     return (
-        <Router>
-            <MainComp>
-                <Navbar />
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/salts" exact component={Salts} />
-                </Switch>
-            </MainComp>
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <MainComp>
+                    <Navbar />
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/salts" exact component={Salts} />
+                    </Switch>
+                </MainComp>
+            </Router>
+        </Provider>
     );
 };
 

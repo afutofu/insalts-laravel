@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 const JumbotronComp = styled.div`
     width: 100%;
-    height: 270px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url("https://cdn11.bigcommerce.com/s-dis4vxtxtc/images/stencil/1280x1280/products/1867/2397/image_1577__37264.1567254894.jpg?c=2?imbypass=on");
     background-size: contain;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 `;
 
 const Container = styled.div`

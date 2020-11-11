@@ -7,20 +7,20 @@ const ButtonComp = styled.button.attrs(props => ({
 }))`
     display: block;
     width: calc(100% - 40px);
-    height: 48px;
+    height: 43px;
     padding: 8px 0;
     text-align: center;
     background-color: ${props =>
         props.secondary ? "white" : "rgb(182, 78, 31)"};
     color: ${props => (props.secondary ? "rgb(182, 78, 31)" : "white")};
-    margin: 18px 20px;
+    margin: 15px 20px;
     margin-top: ${props => props.noMarginTop && "0px"};
     text-transform: uppercase;
     border: ${props =>
         props.secondary ? "1px solid rgb(182, 78, 31)" : "none"};
     outline: none;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     border-radius: 5px;
 
@@ -53,8 +53,12 @@ const ButtonComp = styled.button.attrs(props => ({
         justify-content: center;
         align-items: center;
 
+        transition: color 0.2s, border 0.2s;
+
         :hover {
             text-decoration: none;
+            color: ${props =>
+                props.secondary ? "rgb(233, 132, 85)" : "white"};
         }
     }
 `;
@@ -66,7 +70,7 @@ const Button = props => {
             noMarginTop={props.noMarginTop}
             src={props.src}
         >
-            <Link to={props.src}>{props.children}</Link>
+            <Link to={props.src ?? "/"}>{props.children}</Link>
         </ButtonComp>
     );
 };
