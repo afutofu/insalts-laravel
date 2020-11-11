@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { connect } from "react-redux";
 
+import { register } from "../store/actions/auth";
 import { registerModalToggle } from "../store/actions/modal";
 
 const modalFadeIn = keyframes`
@@ -215,85 +216,15 @@ const RegisterModal = props => {
     const [registerDataError, setRegisterDataError] = useState(
         initialRegisterDataError
     );
-    const { modalOpen, toggleModal } = props;
+    const { register, modalOpen, toggleModal } = props;
 
     if (modalOpen) firstRender = false;
 
-    useEffect(() => {
-        if (isValidated(registerDataError)) {
-            // Attempt to register
-        }
-    }, [registerDataError]);
-
-    const isValidated = registerData => {
-        let error = false;
-        for (let key in registerData) {
-            if (registerData[key].length > 0) {
-                error = true;
-            }
-        }
-        return error;
-    };
-
     const onRegister = () => {
-        // Validate Register Data
-        // Reset error data
-        setRegisterDataError(initialRegisterDataError);
-
-        // Check if username is over 4 characters long
-        if (registerData.username.length < 5) {
-            setRegisterDataError(prevData => {
-                return {
-                    ...prevData,
-                    username: "Username needs to be over 4 characters long"
-                };
-            });
-        }
-
-        // Check if email is proper format
-        // Regex for email
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!re.test(String(registerData.email).toLowerCase())) {
-            setRegisterDataError(prevData => {
-                return {
-                    ...prevData,
-                    email: "Email needs to have proper format"
-                };
-            });
-        }
-
-        // Check if retyped password matches password
-        if (registerData.password !== registerData.rePassword) {
-            setRegisterDataError(prevData => {
-                return {
-                    ...prevData,
-                    password: "Password does not match",
-                    rePassword: "Password does not match"
-                };
-            });
-        }
-
-        // Check if password is greater than or equals to 8 characters long
-        if (registerData.password.length < 8) {
-            setRegisterDataError(prevData => {
-                return {
-                    ...prevData,
-                    password: "Password needs to be over 8 characters long"
-                };
-            });
-        }
-
-        // Check if any fields are empty
-        for (let key in registerData) {
-            if (registerData[key].length <= 0) {
-                setRegisterDataError(prevData => {
-                    return {
-                        ...prevData,
-                        [key]: "Field cannot be empty"
-                    };
-                });
-            }
-        }
+        const { username, email, password } = registerData;
+        register(username, email, password)
+            .then()
+            .catch();
     };
 
     const onModalClose = () => {
@@ -407,6 +338,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        register: (username, email, password) =>
+            dispatch(register(username, email, password)),
         toggleModal: () => dispatch(registerModalToggle())
     };
 };

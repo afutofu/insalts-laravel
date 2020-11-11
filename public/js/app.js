@@ -73855,7 +73855,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store_actions_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/actions/modal */ "./resources/js/store/actions/modal.js");
+/* harmony import */ var _store_actions_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/actions/auth */ "./resources/js/store/actions/auth.js");
+/* harmony import */ var _store_actions_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions/modal */ "./resources/js/store/actions/modal.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -74010,6 +74011,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var modalFadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(_templateObject());
 var modalFadeOut = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(_templateObject2());
 var ButtonContainerHeight = "80px";
@@ -74059,82 +74061,16 @@ var RegisterModal = function RegisterModal(props) {
       registerDataError = _useState4[0],
       setRegisterDataError = _useState4[1];
 
-  var modalOpen = props.modalOpen,
+  var register = props.register,
+      modalOpen = props.modalOpen,
       toggleModal = props.toggleModal;
   if (modalOpen) firstRender = false;
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (isValidated(registerDataError)) {// Attempt to register
-    }
-  }, [registerDataError]);
-
-  var isValidated = function isValidated(registerData) {
-    var error = false;
-
-    for (var key in registerData) {
-      if (registerData[key].length > 0) {
-        error = true;
-      }
-    }
-
-    return error;
-  };
 
   var onRegister = function onRegister() {
-    // Validate Register Data
-    // Reset error data
-    setRegisterDataError(initialRegisterDataError); // Check if username is over 4 characters long
-
-    if (registerData.username.length < 5) {
-      setRegisterDataError(function (prevData) {
-        return _objectSpread(_objectSpread({}, prevData), {}, {
-          username: "Username needs to be over 4 characters long"
-        });
-      });
-    } // Check if email is proper format
-    // Regex for email
-
-
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (!re.test(String(registerData.email).toLowerCase())) {
-      setRegisterDataError(function (prevData) {
-        return _objectSpread(_objectSpread({}, prevData), {}, {
-          email: "Email needs to have proper format"
-        });
-      });
-    } // Check if retyped password matches password
-
-
-    if (registerData.password !== registerData.rePassword) {
-      setRegisterDataError(function (prevData) {
-        return _objectSpread(_objectSpread({}, prevData), {}, {
-          password: "Password does not match",
-          rePassword: "Password does not match"
-        });
-      });
-    } // Check if password is greater than or equals to 8 characters long
-
-
-    if (registerData.password.length < 8) {
-      setRegisterDataError(function (prevData) {
-        return _objectSpread(_objectSpread({}, prevData), {}, {
-          password: "Password needs to be over 8 characters long"
-        });
-      });
-    } // Check if any fields are empty
-
-
-    var _loop = function _loop(key) {
-      if (registerData[key].length <= 0) {
-        setRegisterDataError(function (prevData) {
-          return _objectSpread(_objectSpread({}, prevData), {}, _defineProperty({}, key, "Field cannot be empty"));
-        });
-      }
-    };
-
-    for (var key in registerData) {
-      _loop(key);
-    }
+    var username = registerData.username,
+        email = registerData.email,
+        password = registerData.password;
+    register(username, email, password).then()["catch"]();
   };
 
   var onModalClose = function onModalClose() {
@@ -74222,8 +74158,11 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
+    register: function register(username, email, password) {
+      return dispatch(Object(_store_actions_auth__WEBPACK_IMPORTED_MODULE_3__["register"])(username, email, password));
+    },
     toggleModal: function toggleModal() {
-      return dispatch(Object(_store_actions_modal__WEBPACK_IMPORTED_MODULE_3__["registerModalToggle"])());
+      return dispatch(Object(_store_actions_modal__WEBPACK_IMPORTED_MODULE_4__["registerModalToggle"])());
     }
   };
 };
@@ -74497,16 +74436,75 @@ var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_store_red
 /*!***********************************************!*\
   !*** ./resources/js/store/actions/actions.js ***!
   \***********************************************/
-/*! exports provided: LOGIN_MODAL_TOGGLE, REGISTER_MODAL_TOGGLE */
+/*! exports provided: LOGIN_MODAL_TOGGLE, REGISTER_MODAL_TOGGLE, REGISTER_BEGIN, REGISTER_SUCCESS, REGISTER_FAIL */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGIN_MODAL_TOGGLE", function() { return LOGIN_MODAL_TOGGLE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_MODAL_TOGGLE", function() { return REGISTER_MODAL_TOGGLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_BEGIN", function() { return REGISTER_BEGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_SUCCESS", function() { return REGISTER_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_FAIL", function() { return REGISTER_FAIL; });
 // MODAL
 var LOGIN_MODAL_TOGGLE = "LOGIN_MODAL_TOGGLE";
-var REGISTER_MODAL_TOGGLE = "REGISTER_MODAL_TOGGLE";
+var REGISTER_MODAL_TOGGLE = "REGISTER_MODAL_TOGGLE"; // AUTH
+
+var REGISTER_BEGIN = "REGISTER_BEGIN";
+var REGISTER_SUCCESS = "REGISTER_SUCCESS";
+var REGISTER_FAIL = "REGISTER_FAIL";
+
+/***/ }),
+
+/***/ "./resources/js/store/actions/auth.js":
+/*!********************************************!*\
+  !*** ./resources/js/store/actions/auth.js ***!
+  \********************************************/
+/*! exports provided: register */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "register", function() { return register; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./resources/js/store/actions/actions.js");
+
+
+var register = function register(username, email, password) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      dispatch(registerBegin());
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/users", {
+        username: username,
+        email: email,
+        password: password
+      }).then(function (res) {
+        console.log(res.data);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    });
+  };
+};
+
+var registerBegin = function registerBegin() {
+  return {
+    type: _actions__WEBPACK_IMPORTED_MODULE_1__["REGISTER_BEGIN"]
+  };
+};
+
+var registerSuccess = function registerSuccess() {
+  return {
+    type: _actions__WEBPACK_IMPORTED_MODULE_1__["REGISTER_SUCCESS"]
+  };
+};
+
+var registerFail = function registerFail() {
+  return {
+    type: _actions__WEBPACK_IMPORTED_MODULE_1__["REGISTER_FAIL"]
+  };
+};
 
 /***/ }),
 
@@ -74536,6 +74534,57 @@ var registerModalToggle = function registerModalToggle() {
 
 /***/ }),
 
+/***/ "./resources/js/store/reducers/auth.js":
+/*!*********************************************!*\
+  !*** ./resources/js/store/reducers/auth.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/actions */ "./resources/js/store/actions/actions.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var initialState = {
+  loading: false,
+  user: null
+};
+
+var authReducer = function authReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions_actions__WEBPACK_IMPORTED_MODULE_0__["REGISTER_BEGIN"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true
+      });
+
+    case _actions_actions__WEBPACK_IMPORTED_MODULE_0__["REGISTER_SUCCESS"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false
+      });
+
+    case _actions_actions__WEBPACK_IMPORTED_MODULE_0__["REGISTER_FAIL"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false
+      });
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (authReducer);
+
+/***/ }),
+
 /***/ "./resources/js/store/reducers/index.js":
 /*!**********************************************!*\
   !*** ./resources/js/store/reducers/index.js ***!
@@ -74546,11 +74595,14 @@ var registerModalToggle = function registerModalToggle() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ "./resources/js/store/reducers/modal.js");
+/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth */ "./resources/js/store/reducers/auth.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal */ "./resources/js/store/reducers/modal.js");
+
 
 
 var allReducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  modal: _modal__WEBPACK_IMPORTED_MODULE_1__["default"]
+  auth: _auth__WEBPACK_IMPORTED_MODULE_1__["default"],
+  modal: _modal__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (allReducers);
 
