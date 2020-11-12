@@ -208,7 +208,7 @@ const LoginModal = props => {
             <LoginBox>
                 <Container>
                     <Title>login</Title>
-                    <Header>enter email</Header>
+                    <Header>email</Header>
                     <Input
                         onChange={e => setEmail(e.target.value)}
                         value={email}
@@ -216,7 +216,7 @@ const LoginModal = props => {
                             if (e.key === "Enter") onLogin();
                         }}
                     />
-                    <Header>enter password</Header>
+                    <Header>password</Header>
                     <Input
                         onChange={e => setPassword(e.target.value)}
                         value={password}
@@ -226,9 +226,7 @@ const LoginModal = props => {
                     />
                 </Container>
                 <ButtonContainer>
-                    <LoginButton onClick={() => onLogin()}>
-                        Create Project
-                    </LoginButton>
+                    <LoginButton onClick={() => onLogin()}>Login</LoginButton>
                     <CancelButton onClick={() => onModalClose()}>
                         Cancel
                     </CancelButton>

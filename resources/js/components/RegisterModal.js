@@ -319,7 +319,7 @@ const RegisterModal = props => {
                 </Container>
                 <ButtonContainer>
                     <RegisterButton onClick={() => onRegister()}>
-                        Create Project
+                        Register
                     </RegisterButton>
                     <CancelButton onClick={() => onModalClose()}>
                         Cancel

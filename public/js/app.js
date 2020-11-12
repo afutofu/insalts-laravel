@@ -73684,7 +73684,7 @@ var LoginModal = function LoginModal(props) {
     onClick: function onClick() {
       return onModalClose();
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginBox, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, "login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "enter email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginBox, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, "login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
     onChange: function onChange(e) {
       return setEmail(e.target.value);
     },
@@ -73692,7 +73692,7 @@ var LoginModal = function LoginModal(props) {
     onKeyPress: function onKeyPress(e) {
       if (e.key === "Enter") onLogin();
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "enter password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
     onChange: function onChange(e) {
       return setPassword(e.target.value);
     },
@@ -73704,7 +73704,7 @@ var LoginModal = function LoginModal(props) {
     onClick: function onClick() {
       return onLogin();
     }
-  }, "Create Project"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CancelButton, {
+  }, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CancelButton, {
     onClick: function onClick() {
       return onModalClose();
     }
@@ -74143,7 +74143,7 @@ var RegisterModal = function RegisterModal(props) {
     onClick: function onClick() {
       return onRegister();
     }
-  }, "Create Project"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CancelButton, {
+  }, "Register"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CancelButton, {
     onClick: function onClick() {
       return onModalClose();
     }
