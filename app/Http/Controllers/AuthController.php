@@ -10,12 +10,13 @@ use App\Models\User;
 class AuthController extends Controller
 {
     public function login (Request $request){
+        // Retreive request data
         $email = $request->input('email');
         $password = $request->input('password');
     
         // Validation
         // Check if fields are empty
-        if (!$email && !$password){
+        if (!$email || !$password){
             return response()->json(["msg"=>"Please enter all fields"], 400);
         }
     
